@@ -289,6 +289,18 @@ Login → Dashboard → Manage Menu → Manage Orders → Manage Users
 | Hamira Begum (4733) | Documentation & Testing | Report writing, workflow testing, screenshots preparation |
 
 ---
+## 📌 Conclusion
+
+The Restaurant Management System (Delicious Bites) successfully automates restaurant operations including:
+
+- menu browsing
+- order processing
+- reservation handling
+- feedback management
+
+The system improves service efficiency, reduces manual workload, and enhances customer satisfaction.
+
+---
 
 ## 👨‍💻 Author
 
