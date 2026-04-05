@@ -225,10 +225,10 @@ Login → Dashboard → Manage Menu → Manage Orders → Manage Users
 ![Home Page](assets/screenshots/home.png)
 
 #### 🍽️ Menu Page
-![Menu Page](assets/screenshots/menu.png)
+![Menu Page](assets/screenshots/manu.png)
 
 #### 🛒 Cart Page
-![Cart Page](assets/screenshots/cart.png)
+![Cart Page](/assets/screenshots/card.png)
 
 #### 📦 Orders Page
 ![Orders Page](assets/screenshots/orders.png)
