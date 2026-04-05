@@ -119,6 +119,112 @@ DeliciousBites/
 
 ---
 
+## 🗄️ Database Tables
+
+- users
+- menu_items
+- orders
+- order_details
+- reservations
+- feedback
+
+---
+
+## 🔄 System Workflow
+
+### User Flow
+
+Register → Login → Browse Menu → Add to Cart → Checkout → Order Stored
+
+### Reservation Flow
+
+Login → Book Table → Admin Approves → Reservation Confirmed
+
+### Admin Flow
+
+Login → Dashboard → Manage Menu → Manage Orders → Manage Users
+
+---
+
+
+## ⚠️ Limitations
+
+- No online payment integration
+- No real-time delivery tracking
+- Limited UI customization
+- No mobile application
+- No inventory management module
+- Basic security implementation
+- Scalability constraints
+
+---
+
+## 🔮 Future Enhancements
+
+- Online payment gateway integration
+- Email notification system
+- Delivery tracking system
+- Inventory management module
+- Sales analytics dashboard
+- Mobile application version
+
+---
+
+## 👥 Team Contribution
+
+**SmartServe Team (Group-3)**
+
+| Team Member | Role | Contribution |
+|------------|------|-------------|
+| **Md. Yeasin Islam (4284)** | Full Stack Developer | Developed complete **admin panel** (dashboard, menu management, orders management, reservations management, users management, feedback) and handled database integration |
+| **Ankon Saha (4295)** | Authentication Developer | Implemented authentication system (login, registration, logout) with session management |
+| **Afsana Hamima Punam (4737)** | User Module Developer | Developed user profile and feedback modules |
+| **Hamira Begum (4733)** | Reservation & Order Module Developer | Developed reservation system and order history modules |
+
+---
+## 📸 Preview Pages
+#### 🔐 Login Page
+![Login Page](assets/screenshots/login.png)
+
+#### 📝 Register Page
+![Register Page](assets/screenshots/register.png)
+
+#### 📝 Profile Page
+![Profile Page](assets/screenshots/profile.png)
+
+#### 🏠 Home Page
+![Home Page](assets/screenshots/home.png)
+
+#### 🍽️ Menu Page
+![Menu Page](assets/screenshots/manu.png)
+
+#### 🛒 Cart Page
+![Cart Page](/assets/screenshots/card.png)
+
+#### 📦 Orders Page
+![Orders Page](assets/screenshots/orders.png)
+
+#### 📅 Reservation Page
+![Reservation Page](assets/screenshots/reservation.png)
+
+#### ⭐ Feedback Page
+![Feedback Page](assets/screenshots/feedback.png)
+
+#### 📊 Admin Dashboard
+![Admin Dashboard](assets/screenshots/admin-dashboard.png)
+
+#### 📋 Manage Menu
+![Manage Menu](assets/screenshots/manage-menu.png)
+
+#### 📦 Manage Orders
+![Manage Orders](assets/screenshots/manage-orders.png)
+
+#### 📅 Manage Reservations
+![Manage Reservations](assets/screenshots/manage-reservations.png)
+
+---
+
+
 ## ⚙️ Installation Guide
 
 Follow these steps to run the project locally:
@@ -185,110 +291,6 @@ http://localhost/DeliciousBites/
 
 ---
 
-## 🗄️ Database Tables
-
-- users
-- menu_items
-- orders
-- order_details
-- reservations
-- feedback
-
----
-
-## 🔄 System Workflow
-
-### User Flow
-
-Register → Login → Browse Menu → Add to Cart → Checkout → Order Stored
-
-### Reservation Flow
-
-Login → Book Table → Admin Approves → Reservation Confirmed
-
-### Admin Flow
-
-Login → Dashboard → Manage Menu → Manage Orders → Manage Users
-
----
-
-#### 🔐 Login Page
-![Login Page](assets/screenshots/login.png)
-
-#### 📝 Register Page
-![Register Page](assets/screenshots/register.png)
-
-#### 📝 Profile Page
-![Profile Page](assets/screenshots/profile.png)
-
-#### 🏠 Home Page
-![Home Page](assets/screenshots/home.png)
-
-#### 🍽️ Menu Page
-![Menu Page](assets/screenshots/manu.png)
-
-#### 🛒 Cart Page
-![Cart Page](/assets/screenshots/card.png)
-
-#### 📦 Orders Page
-![Orders Page](assets/screenshots/orders.png)
-
-#### 📅 Reservation Page
-![Reservation Page](assets/screenshots/reservation.png)
-
-#### ⭐ Feedback Page
-![Feedback Page](assets/screenshots/feedback.png)
-
-#### 📊 Admin Dashboard
-![Admin Dashboard](assets/screenshots/admin-dashboard.png)
-
-#### 📋 Manage Menu
-![Manage Menu](assets/screenshots/manage-menu.png)
-
-#### 📦 Manage Orders
-![Manage Orders](assets/screenshots/manage-orders.png)
-
-#### 📅 Manage Reservations
-![Manage Reservations](assets/screenshots/manage-reservations.png)
-
-
----
-
-## ⚠️ Limitations
-
-- No online payment integration
-- No real-time delivery tracking
-- Limited UI customization
-- No mobile application
-- No inventory management module
-- Basic security implementation
-- Scalability constraints
-
----
-
-## 🔮 Future Enhancements
-
-- Online payment gateway integration
-- Email notification system
-- Delivery tracking system
-- Inventory management module
-- Sales analytics dashboard
-- Mobile application version
-
----
-
-## 👥 Team Contribution
-
-**SmartServe Team (Group-3)**
-
-| Team Member | Role | Contribution |
-|------------|------|--------------|
-| Md. Yeasin Islam (4284) | Full Stack Developer | Backend development, authentication system, admin dashboard logic, database integration |
-| Ankon Saha (4295) | Frontend Developer | UI layout design, menu pages, reservation interface |
-| Afsana Hamima Punam (4737) | Database Designer | Database schema design, table relationships |
-| Hamira Begum (4733) | Documentation & Testing | Report writing, workflow testing, screenshots preparation |
-
----
 ## 📌 Conclusion
 
 The Restaurant Management System (Delicious Bites) successfully automates restaurant operations including:
