@@ -1,9 +1,4 @@
 <?php
-/**
- * Table Reservation Page
- * Allows users to book a table at the restaurant
- * Shows existing reservations and their status
- */
 
 // Include database configuration
 require_once '../config/db.php';

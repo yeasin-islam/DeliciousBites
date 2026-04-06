@@ -108,7 +108,7 @@ $menu_query = "SELECT * FROM menu_items ORDER BY category, item_name";
 $menu_result = mysqli_query($conn, $menu_query);
 
 // Get unique categories for dropdown
-$categories = array('Burgers', 'Pizza', 'Pasta', 'Salads', 'Main Course', 'Seafood', 'Desserts', 'Beverages');
+$categories = array('Burgers', 'Pizza', 'Pasta', 'Salads', 'Drinks', 'Main Course', 'Seafood', 'Desserts', 'Beverages');
 ?>
 
 <!DOCTYPE html>

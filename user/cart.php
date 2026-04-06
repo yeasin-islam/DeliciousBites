@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['checkout'])) {
     if (empty($_SESSION['cart'])) {
         $error = 'Your cart is empty';
     } else {
-        $delivery_address = sanitize($_POST['delivery_address']);
+        $delivery_address = isset($_POST['delivery_address']) ? sanitize($_POST['delivery_address']) : '';
         
         if (empty($delivery_address)) {
             $error = 'Please enter a delivery address';
@@ -90,26 +90,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['checkout'])) {
                 $total += $item['price'] * $item['quantity'];
             }
             
-            // Insert order
+            // Cast user_id to integer for security
+            $user_id_safe = (int)$user_id;
+            $total_safe = floatval($total);
+            $delivery_address_safe = mysqli_real_escape_string($conn, $delivery_address);
+            
+            // Insert order with proper type casting
             $order_query = "INSERT INTO orders (user_id, total_amount, delivery_address, status) 
-                           VALUES ($user_id, $total, '$delivery_address', 'Pending')";
+                           VALUES ($user_id_safe, $total_safe, '$delivery_address_safe', 'Pending')";
             
             if (mysqli_query($conn, $order_query)) {
                 $order_id = mysqli_insert_id($conn);
                 
                 // Insert order details
+                $all_details_inserted = true;
                 foreach ($_SESSION['cart'] as $item) {
+                    $item_id_safe = (int)$item['item_id'];
+                    $qty_safe = (int)$item['quantity'];
+                    $price_safe = floatval($item['price']);
+                    
                     $detail_query = "INSERT INTO order_details (order_id, item_id, quantity, price) 
-                                    VALUES ($order_id, {$item['item_id']}, {$item['quantity']}, {$item['price']})";
-                    mysqli_query($conn, $detail_query);
+                                    VALUES ($order_id, $item_id_safe, $qty_safe, $price_safe)";
+                    
+                    if (!mysqli_query($conn, $detail_query)) {
+                        $all_details_inserted = false;
+                        break;
+                    }
                 }
                 
-                // Clear cart
-                $_SESSION['cart'] = array();
-                
-                redirect('orders.php?success=1');
+                if ($all_details_inserted) {
+                    // Clear cart from session
+                    unset($_SESSION['cart']);
+                    $_SESSION['cart'] = array();
+                    
+                    // Redirect to orders page with success
+                    header("Location: orders.php?success=1");
+                    exit();
+                } else {
+                    $error = 'Failed to save order details: ' . mysqli_error($conn);
+                }
             } else {
-                $error = 'Failed to place order. Please try again.';
+                $error = 'Failed to create order: ' . mysqli_error($conn);
             }
         }
     }
@@ -198,7 +219,7 @@ $user_data = mysqli_fetch_assoc($user_result);
                                 </tbody>
                             </table>
                             <div class="cart-actions">
-                                <button type="submit" name="update_cart" class="btn btn-secondary">Update Cart</button>
+                                <input type="submit" name="update_cart" value="Update Cart" class="btn btn-secondary">
                                 <a href="cart.php?action=clear" class="btn btn-danger">Clear Cart</a>
                             </div>
                         </form>
@@ -227,11 +248,9 @@ $user_data = mysqli_fetch_assoc($user_result);
                                           name="delivery_address" 
                                           rows="3" 
                                           placeholder="Enter your delivery address"
-                                          required><?php echo $user_data['address']; ?></textarea>
+                                          required><?php echo isset($user_data['address']) ? $user_data['address'] : ''; ?></textarea>
                             </div>
-                            <button type="submit" name="checkout" class="btn btn-primary btn-block">
-                                Place Order
-                            </button>
+                            <input type="submit" name="checkout" value="Place Order" class="btn btn-primary btn-block">
                         </form>
 
                         <a href="menu.php" class="continue-shopping">Continue Shopping</a>
